@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday In advance Bubu</title>
+    <link rel="stylesheet" href="app.css">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  background-color: pink;
+  }
+  body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .head img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .head img:hover {
+            transform: scale(1.1);
+        }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      color: #333; /* Dark text color */
+    }
+    h1 {
+      color: #e50914; /* Red color for heading */
+      font-size: 42px;
+      margin-top: 0;
+      border-bottom: 2px solid #e50914;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    #countdown {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 20px;
+      color: #555; /* Slightly darker text color */
+      margin-bottom: 30px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-img {
+      width: 100%;
+      border-bottom: 2px solid #e50914;
+    }
+    .photo-caption {
+      font-style: italic;
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: rgb(231, 179, 196); /* White background color */
+      color: #666; /* Slightly darker text color */
+    }
+    .decorative-border {
+      background-color: #e50914;
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft box shadow */
+    }
+    .decorative-border h2 {
+      color: #fff;
+      font-size: 24px;
+      margin: 0;
+    }
+    /* Additional CSS */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      #countdown {
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .gallery-item {
+        width: calc(50% - 20px); /* Two items per row */
+      }
+      .photo-caption {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-item {
+        width: 40%; /* One item per row */
+      }
+    }
+  
+</style>
+</head>
+<body>
+    <section>
+        <div class="container">
+      <div class="head">
+          <img src="image\00001.jpg" alt="" width="300">
+          <div class="decorative-border">
+            <h2> Wishing you the happiest Birthday ever in advance...</h2>
+          </div>
+      </div>  
+      
+          <h2><div id="countdown"></div></h2>
+          <p>Wishing you a fantastic birthday in advance! May this special day bring you joy, laughter, and all the wonderful things you deserve. Have an amazing year ahead!</p>
+          <div class="gallery">
+            <div class="gallery-item">
+              <img class="gallery-img" src="image/001.jpg" alt="">
+              <p class="photo-caption">Cheers to another year of fabulous adventures! Happy birthday in advance! <strong>Pagal Aurat</strong></p>
+            </div>
+            <div class="gallery-item">
+              <img class="gallery-img" src="image/002.jpg" alt="">
+              <p class="photo-caption">Sending you love, hugs, and good vibes on your special day.Before your birthday! <strong>Bhutki</strong></p>
+            </div>
+            <div class="gallery-item">
+              <img class="gallery-img" src="image/003.jpg" alt="">
+              <p class="photo-caption">May your this birthday be as bright and beautiful as you are! Wishing you all the happiness in the world.
+                <strong>Bingoo</strong>
+              </p>
+            </div>
+            <div class="gallery-item">
+              <img class="gallery-img" src="image/004.jpg" alt="">
+              <p class="photo-caption">To the most wonderful person on their upcoming birthday: You're amazing, you're loved, and you're cherished. Happy birthday! <strong>Kutiya</strong> </p>
+            </div>
+          </div>
+        </div>
+        </section>
+    
+    
+        
+        <!-- partial -->
+          <script>
+
+// Set the date for the birthday
+    const birthdayDate = new Date('2025-04-13T00:00:00');
+
+    // Update the countdown every second
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = birthdayDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdown.innerHTML = "It's your birthday!";
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+</script>
+</body>
+</html>
